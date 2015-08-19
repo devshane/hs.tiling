@@ -80,6 +80,13 @@ function tiling.promote()
   apply(windows, space.layout)
 end
 
+function tiling.select_layout(name)
+  local space = getspace()
+  local windows = space.windows
+  layouts[name](windows)
+  alert.show(name, 1)
+end
+
 function apply(windows, layout)
   layouts[layout](windows)
 end
